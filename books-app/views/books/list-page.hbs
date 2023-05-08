@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Listado de libros</h1>
+    <hr class="mb-3">
+
+    {{#each books}}
+    {{title}}
+
+    {{!-- BOTÓN PARA VER LOS DETALLES --}}
+    <a href="/libros/detalles/{{_id}}" class="btn btn-sm btn-dark">ver detalles</a>
+
+    {{!-- BOTÓN PARA EDITAR --}}
+    <a href="/libros/editar/{{_id}}" class="btn btn-sm btn-info">editar</a>
+
+    {{!-- BOTÓN PARA ELIMINAR (ES UN FORMULARIO DISIMULADO PARA ASEGURAR QUE SEA UN ENDPOINT DE POST, INACCESIBLE A
+    TRAVÉS DE LA URL) --}}
+    <form action="/libros/eliminar/{{_id}}" method="POST" style="display: inline">
+        <input type="submit" value="eliminar" class="btn btn-sm btn-danger">
+    </form>
+
+    <hr>
+
+    {{/each}}
+
+    <hr>
+    <a href="/" class="btn btn-dark">Volver a inicio</a>
+</div>
