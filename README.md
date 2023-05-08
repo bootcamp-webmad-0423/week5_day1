@@ -26,13 +26,12 @@ Las dependecias `express-session` y `connect-mongo` ofrecen configuraciones que 
   }
   module.exports = { myMiddleware }
   ````
+- Asimismo, pueden ser incluidos entre rutas o como parte de una ruta, argumentándolo entre el endpoint y el callback:
   ````javascript 
   // any-routes.js
   const { myMiddleware } = require('./../middleware/any-middleware')
   ````
-- Asimismo, pueden ser incluidos entre rutas o como parte de una ruta, argumentándolo entre el endpoint y el callback:
   ````javascript
-  // any-routes.js
   app.get('/endpoint', myMiddleware, (req, res, next) => res.render('any-view'))
   ````
   
